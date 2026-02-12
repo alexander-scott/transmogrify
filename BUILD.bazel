@@ -1,0 +1,21 @@
+load("@rules_python//python:py_binary.bzl", "py_binary")
+load("//:transmogrify.bzl", "transmogrify")
+
+py_binary(
+  name = "transmogrify",
+  srcs = [
+    "transmogrify.py",
+  ]
+)
+
+py_binary(
+  name = "check_transmogrified",
+  srcs = [
+    "check_transmogrified.py",
+  ]
+)
+
+transmogrify(
+  name = "hello",
+  src = "hello.txt",
+)
